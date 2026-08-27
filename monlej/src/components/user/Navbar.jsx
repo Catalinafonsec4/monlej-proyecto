@@ -6,7 +6,6 @@ export default function Navbar() {
     const NavItems = [
         'Uniformes',
         'Folclore',
-        'Ropa',
         'Infantil',
         'Accesorios',
         'Otros',
