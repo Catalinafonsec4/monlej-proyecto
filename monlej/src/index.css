@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 @import "leaflet/dist/leaflet.css";
+
+@layer components {
+    .leaflet-control-zoom-in,
+    .leaflet-control-zoom-out {
+        @apply !bg-rosa-pastel !text-rosa-vino !border-rosa-acento/40 hover:!bg-rosa-acento;
+    }
+}

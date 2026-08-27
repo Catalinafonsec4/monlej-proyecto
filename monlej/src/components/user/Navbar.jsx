@@ -19,7 +19,7 @@ export default function Navbar() {
             <img src={Logo} alt="Monlej Logo" className="h-16 w-auto object-contain"/>
         </div>
 
-        {/* Menú de navegación */}
+        {/* Menu de navegacion */}
         <ul className="flex items-center gap-3 text-rosa-vino text-base font-serif">
             {NavItems.map((item, index) => {
             const isActive = ActivaItem === item;
