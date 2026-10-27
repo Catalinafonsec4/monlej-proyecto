@@ -1,0 +1,46 @@
+stages:
+  - test
+  - build
+
+default:
+  image: node:20
+
+# ---------- BACKEND (Node + Express) ----------
+backend-test:
+  stage: test
+  cache:
+    key: backend-modules
+    paths:
+      - backend/node_modules/
+  script:
+    - cd backend
+    - npm ci
+    - npm test --if-present
+
+# ---------- FRONTEND (React, carpeta monlej) ----------
+frontend-test:
+  stage: test
+  variables:
+    CI: "true"
+  cache:
+    key: frontend-modules
+    paths:
+      - monlej/node_modules/
+  script:
+    - cd monlej
+    - npm ci
+    - npm test --if-present
+
+frontend-build:
+  stage: build
+  cache:
+    key: frontend-modules
+    paths:
+      - monlej/node_modules/
+  script:
+    - cd monlej
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - monlej/dist/    # si usas Create React App, cambia a monlej/build/
