@@ -3,10 +3,11 @@ import { FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa';
 
 export default function Footer() {
   return (
+    // Contenedor principal del pie de página
     <footer className="bg-rosa-pastel text-rosa-vino w-full px-8 py-6 shadow-inner">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
-        {/* Columna izquierda: Ubicacion */}
+        {/* Columna izquierda: Información de ubicación */}
         <div className="flex flex-col text-left space-y-1 md:w-1/3">
           <p className="font-bold text-base">Ubicación:</p>
           <p className="text-sm leading-tight text-rosa-vino/80">
@@ -15,7 +16,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Columna central: Eslogan y redes sociales */}
+        {/* Columna central: Eslogan y enlaces de redes sociales */}
         <div className="flex flex-col items-center justify-center space-y-3 text-center md:w-2/3">
           <h2 className="font-serif text-xl md:text-2xl font-normal italic tracking-wide">
             "El don de crear arte con las manos."
@@ -23,6 +24,7 @@ export default function Footer() {
 
           {/* Redes sociales */}
           <div className="flex items-center gap-4 pt-1">
+            {/* WhatsApp */}
             <a 
               href="https://wa.me/56950962046" 
               target="_blank" 
@@ -33,6 +35,7 @@ export default function Footer() {
               <FaWhatsapp className="w-5 h-5" />
             </a>
 
+            {/* Instagram */}
             <a 
               href="https://www.instagram.com/monlej_confecciones/" 
               target="_blank" 
@@ -43,6 +46,7 @@ export default function Footer() {
               <FaInstagram className="w-5 h-5" />
             </a>
 
+            {/* Facebook */}
             <a 
               href="https://www.facebook.com/cecilia.vielma.967" 
               target="_blank" 
@@ -53,6 +57,7 @@ export default function Footer() {
               <FaFacebookF className="w-5 h-5" />
             </a>
 
+            {/* TikTok */}
             <a 
               href="https://www.tiktok.com/@ceciliavielma2" 
               target="_blank" 
@@ -65,7 +70,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Columna derecha: Logo */}
+        {/* Columna derecha: Logotipo */}
         <div className="flex items-center justify-end md:w-1/3">
           <img 
             src={Logo} 
