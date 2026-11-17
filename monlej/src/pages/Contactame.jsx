@@ -25,7 +25,7 @@ export default function Contáctame({ isOpen, onClose }) {
           CONTÁCTAME
         </h2>
 
-        {/* Contenedor del */}
+        {/* Contenedor */}
         <div className="bg-rosa-pastel p-4 rounded-2xl border border-rosa-vino/20 shadow-inner mb-6 flex items-center justify-center">
           <img 
             src={QrWhatsapp} 
@@ -76,7 +76,6 @@ export default function Contáctame({ isOpen, onClose }) {
             <FaTiktok className="w-6 h-6" />
           </a>
         </div>
-
       </div>
     </div>
   );
