@@ -1,54 +1,57 @@
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Logo from '../../assets/Logo_Monlej.png';
 import Contáctame from '../../pages/Contactame';
 
 export default function Navbar() {
-    // Estado para controlar cuál elemento del menú está activo
-    const [ActivaItem, setActivaItem] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
     // Estado para mostrar u ocultar la ventana flotante de contacto
     const [Contacto, setContacto] = useState(false);
     
-    // Lista de opciones de navegación
+    // Lista de opciones de navegación con sus respectivas rutas
     const NavItems = [
-        'Uniformes',
-        'Folclore',
-        'Infantil',
-        'Accesorios',
-        'Otros',
-        'Contáctame'
+        { label: 'Uniformes', path: '/uniformes' },
+        { label: 'Folclore', path: '/folclore' },
+        { label: 'Infantil', path: '/infantil' },
+        { label: 'Accesorios', path: '/accesorios' },
+        { label: 'Otros', path: '/otros' },
+        { label: 'Contáctame', path: null }
     ];
 
     // Maneja el clic en los elementos del menú
     const handleNavClick = (item) => {
-        setActivaItem(item);
-        if (item === 'Contáctame') {
+        if (item.label === 'Contáctame') {
             setContacto(true);
+        } else if (item.path) {
+            navigate(item.path);
         }
     };
 
-    // Cierra el modal y limpia el estado activo de "Contáctame"
+    // Cierra el modal de contacto
     const handleCloseModal = () => {
         setContacto(false);
-        if (ActivaItem === 'Contáctame') {
-            setActivaItem('');
-        }
     };
 
     return (
         <>
-            <nav className="bg-rosa-pastel w-full px-8 py-4 flex items-center justify-between shadow-sm">
-                {/* Logo Monlej */}
-                <div onClick={() => setActivaItem('')} className="flex items-center cursor-pointer">
+            <nav className="bg-rosa-pastel w-full px-8 py-4 flex items-center justify-between shadow-sm border-b-2 border-rosa-acento">
+                {/* Logo Monlej: lleva al Home ("/") */}
+                <div onClick={() => navigate('/')} className="flex items-center cursor-pointer">
                     <img src={Logo} alt="Monlej Logo" className="h-16 w-auto object-contain" />
                 </div>
 
                 {/* Menú de navegación */}
                 <ul className="flex items-center gap-3 text-rosa-vino text-base font-serif">
                     {NavItems.map((item, index) => {
-                        const isActive = ActivaItem === item;
+                        // Activo si la ruta coincide o si el modal de Contáctame está abierto
+                        const isActive = item.label === 'Contáctame'
+                            ? Contacto
+                            : location.pathname === item.path;
 
                         return (
-                            <li key={item} className="flex items-center gap-3">
+                            <li key={item.label} className="flex items-center gap-3">
                                 {/* Botón de cada sección */}
                                 <button
                                     onClick={() => handleNavClick(item)}
@@ -58,7 +61,7 @@ export default function Navbar() {
                                             : 'hover:text-rosa-acento text-rosa-vino'
                                     }`}
                                 >
-                                    {item}
+                                    {item.label}
                                 </button>
 
                                 {/* Separador vertical entre elementos */}

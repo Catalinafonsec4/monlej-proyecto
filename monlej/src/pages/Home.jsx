@@ -6,7 +6,7 @@ import Carrusel from '../components/user/Carrusel';
 export default function Home() {
   return (
     // Contenedor principal de la página
-    <div className="min-h-screen bg-blanco-puro flex flex-col justify-between font-sans">
+    <div className="min-h-screen bg-rosa-pastel flex flex-col justify-between font-sans">
       {/* Barra de navegación */}
       <Navbar />
 
@@ -38,8 +38,17 @@ export default function Home() {
         </section>
 
         {/* Sección del Mapa */}
-        <section className="bg-rosa-ultraclaro/50 p-8 rounded-2xl border border-rosa-acento/20">
-          <Mapa />
+        <section className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-rosa-acento/20 space-y-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
+            <h2 className="text-2xl font-bold text-rosa-vino">¿Dónde Encontrarme?</h2>
+            <span className="text-xl text-rosa-vino/75">
+              Sitio 17, Santa Emma, Curacautín
+            </span>
+          </div>
+
+          <div className="rounded-xl overflow-hidden border border-rosa-acento/30">
+            <Mapa />
+          </div>
         </section>
       </main>
 

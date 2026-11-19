@@ -4,7 +4,7 @@ import { FaWhatsapp, FaInstagram, FaFacebookF, FaTiktok } from 'react-icons/fa';
 export default function Footer() {
   return (
     // Contenedor principal del pie de página
-    <footer className="bg-rosa-pastel text-rosa-vino w-full px-8 py-6 shadow-inner">
+    <footer className="bg-rosa-pastel text-rosa-vino w-full px-8 py-6 shadow-inner border-t-2 border-rosa-acento">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
         
         {/* Columna izquierda: Información de ubicación */}
