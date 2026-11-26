@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+// Datos de prueba para el carrusel (luego se reemplazan por los de la BD)
+// Agregar 'Novedades', o 'Destacados'
 const slides = [
     {
         id: 1,

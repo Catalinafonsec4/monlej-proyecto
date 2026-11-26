@@ -6,6 +6,7 @@ import Uniformes from './pages/Uniformes';
 import Folclore from './pages/Folclore';
 import Infantil from './pages/Infantil';
 import Accesorios from './pages/Accesorios';
+import Otros from './pages/Otros';
 
 export default function App() {
     return (
@@ -18,10 +19,7 @@ export default function App() {
                     <Route path="/folclore" element={<Folclore />} />
                     <Route path="/infantil" element={<Infantil />} />
                     <Route path="/accesorios" element={<Accesorios />} />
-                    <Route
-                        path="/otros"
-                        element={<div className="p-10 text-rosa-vino">Página Otros</div>}
-                    />
+                    <Route path="/otros" element={<Otros />} />
                 </Routes>
 
                 {/* Panel lateral disponible en toda la navegación */}
