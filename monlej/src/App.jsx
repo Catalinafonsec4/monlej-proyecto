@@ -4,6 +4,7 @@ import ListaReserva from './components/user/Lista_Reserva';
 import Home from './pages/Home';
 import Uniformes from './pages/Uniformes';
 import Folclore from './pages/Folclore';
+import Infantil from './pages/Infantil';
 
 export default function App() {
     return (
@@ -14,10 +15,7 @@ export default function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/uniformes" element={<Uniformes />} />
                     <Route path="/folclore" element={<Folclore />} />
-                    <Route
-                        path="/infantil"
-                        element={<div className="p-10 text-rosa-vino">Página Infantil</div>}
-                    />
+                    <Route path="/infantil" element={<Infantil />} />
                     <Route
                         path="/accesorios"
                         element={<div className="p-10 text-rosa-vino">Página Accesorios</div>}
